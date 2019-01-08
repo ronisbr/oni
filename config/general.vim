@@ -2,14 +2,9 @@
 " ==============================================================================
 
 " Folders to store backups, undo files, and swap files.
-let g:data_dir   = g:conf_dir . 'data/'
-let g:backup_dir = g:data_dir   . 'backup'
-let g:swap_dir   = g:data_dir   . 'swap'
-let g:undo_dir   = g:data_dir   . 'undo'
-
-if finddir(g:data_dir) ==# ''
-    silent call mkdir(g:data_dir)
-endif
+let g:backup_dir = g:share_dir   . 'backup'
+let g:swap_dir   = g:share_dir   . 'swap'
+let g:undo_dir   = g:share_dir   . 'undo'
 
 if finddir(g:backup_dir) ==# ''
     silent call mkdir(g:backup_dir)
@@ -24,16 +19,15 @@ if finddir(g:undo_dir) ==# ''
 endif
 
 set backup
-let &backupdir=data_dir . 'backup'
+let &backupdir=g:backup_dir
 
-let &directory=data_dir . 'swap'
+let &directory=g:swap_dir
 
 set undofile
 set undolevels=1000
 set undoreload=10000
-let &undodir=data_dir. 'undo'
+let &undodir=g:undo_dir
 
-unlet g:data_dir
 unlet g:backup_dir
 unlet g:swap_dir
 unlet g:undo_dir
