@@ -1,6 +1,16 @@
 " Configuration directory.
 let g:conf_dir=$HOME . '/.config/oni/'
 
+" Share direction.
+let g:share_dir=$HOME . '/.local/share/oni/'
+
+if finddir(g:share_dir) ==# ''
+    silent call mkdir(g:share_dir)
+endif
+
+" Set a custom directory for the manifest to avoid conflict with Neovim.
+let $NVIM_RPLUGIN_MANIFEST=g:share_dir . 'rplugin.vim'
+
 " Configure dein - plugin manager.
 if has('vim_starting')
     if &compatible
