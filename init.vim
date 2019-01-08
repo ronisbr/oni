@@ -11,6 +11,10 @@ endif
 " Set a custom directory for the manifest to avoid conflict with Neovim.
 let $NVIM_RPLUGIN_MANIFEST=g:share_dir . 'rplugin.vim'
 
+" This configuration is necessary so that deoplete can work properly when using
+" Oni.
+let $TERM='xterm-256color'
+
 " Configure dein - plugin manager.
 if has('vim_starting')
     if &compatible
