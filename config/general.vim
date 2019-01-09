@@ -72,3 +72,6 @@ set wrap linebreak nolist
 
 " Enable use of mouse in all modes.
 set mouse=a
+
+" Show column one character after the text width.
+set colorcolumn=+1
