@@ -15,6 +15,7 @@ if dein#load_state(expand(conf_dir . 'dein'))
     call dein#add('sirver/ultisnips')
     call dein#add('tpope/vim-fugitive')
     call dein#add('vim-scripts/YankRing.vim')
+    call dein#add('terryma/vim-multiple-cursors')
 
     " Plugins with lazy load.
     call dein#add('ctrlpvim/ctrlp.vim',
@@ -24,12 +25,8 @@ if dein#load_state(expand(conf_dir . 'dein'))
     call dein#add('mbbill/undotree',
                 \ { 'on_cmd':           'UndotreeToggle'})
 
-    call dein#add('terryma/vim-multiple-cursors',
-                \ { 'hook_post_source': 'exec "source "' . conf_dir . 'config_lazy/vim-multiple-cursors.vim',
-                \   'on_map':           '<C-n>'})
-
     call dein#add('vim-latex/vim-latex',
-                \ { 'hook_source':      'exec "source "' . conf_dir . 'config_lazy/vim-latex.vim',
+                \ { 'hook_source':      'exe "source "' . conf_dir . 'config_lazy/vim-latex.vim',
                 \   'on_ft':            ['bibtex', 'tex', 'plaintex']})
 
     call dein#end()
